@@ -1,28 +1,36 @@
+
 //This counter calls up the question that's appearing.
 var questionCounter=0;
 
 //code for Timer:
 timeLeft=45
 $timerDiv=$('#timer')
-var timer = setInterval(countdown, 1000);
-function countdown(){
+constantVar="komencu"
+var countdown =function(){
+
+
+
   if(timeLeft<0){
-    clearTimeout()
-    //do something else (game over lol)
+     $('.container').hide()
+     $('#userInput').children('ul').remove()
+     $('#ending').show()
     console.log('time has reached zero')
-  }else{
-    $timerDiv.html(timeLeft)
-    timeLeft--;
   }
+
+  else if (constantVar=="komencu"){
+   setInterval(function(){ timeLeft--;
+    $timerDiv.html(timeLeft)
+      console.log("read me")}, 1000)
+  }
+
 }
+countdown()
 //inspiration for count down
 // http://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward
 
 
 //array for questions
 
-//blank will be defined in a function
-blank=" 'this will be defined in a function' "
 //the following is the array for level 1
 var lvl1Questions = [
 {english: "The girl is strong!",
@@ -81,6 +89,7 @@ $('#userInput').append('<ul id=ulAnswers>')
       return
      }
 
+
     } // end of internal for loop, answers display
     }//end of for loop (iteration through question array)
   }//end of makeNewQuestionAppear
@@ -98,16 +107,54 @@ makeNewQuestionAppear(questionCounter)
         {
           var $target=$(event.target)
           if ( $target.hasClass('true')){
-           $timerDiv.html(timeLeft +=8)
-           $('.replaceHere').replaceWith(($target))
-           questionCounter++;
-           console.log("Yay true!")
+          $timerDiv.html(timeLeft +=8)
+          console.log('the time left are: ' +  timeLeft)
+          //find me
+          //clearInterval was here
+          $('#userInput').hide()
+          $('.replaceHere').replaceWith(($target))
+          //"replacement" moves the correct answer's button into the Upper Area
           $('#userInput').children('ul').remove()
-          makeNewQuestionAppear(questionCounter)
-          addEventListeners();
-            } else{console.log('false!!!')
 
-              //error div should appear
+
+           if(lvl1Questions.length==(questionCounter+1)){
+                  console.log("this is the end")
+                  $('#victory').show()
+
+                }else{   $('#inbetweenQuestions').show()
+                }
+            }
+
+          else if ($target.hasClass('questionToggler')) {
+          questionCounter++;
+          $('#inbetweenQuestions').hide()
+          $('#userInput').show()
+          makeNewQuestionAppear(questionCounter)
+          console.log('why')
+          //find me
+          //setInterval was set here
+
+          addEventListeners();
+            }
+
+          else if ($target.hasClass('beginGame')) {
+          $('#beginning').hide()
+          $('#ending').hide()
+          $('.container').show()
+          //find me
+          //setInterval was set here
+            }
+
+
+
+            else{
+              console.log('false!!!')
+              //the esle statement means that a false answer was chosen.
+              //#ending is
+            $('.container').hide()
+            $('#userInput').children('ul').remove()
+            $('#ending').show()
+
           }
         }) //end of button listener
 
