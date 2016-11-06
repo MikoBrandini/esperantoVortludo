@@ -42,12 +42,20 @@ background-color: blue;
   margin:  0 auto;
   display:  none;
 }
-#alphabet{
+#pronounciation{
   background-color: purple;
   width:  300px;
   margin:  0 auto;
   display:  none;
 }
+
+td,th,table{
+  border:  1px solid black;
+}
+table{
+  display:  none;
+}
+
 .likeIn{
   color:  red;
 }

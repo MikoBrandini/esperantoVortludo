@@ -17,10 +17,16 @@
    <button class="beginGame">begin game</button>
   </div>
 
-  <div id="alphabet">
+  <div id="pronounciation">
 
-  Unique Consonants
-  <table border="1  ">
+  <div id="tableTogglers">
+  <button class="uniqueConsonantsToggler"> Unique Consonants</button>
+  <button class="vowelsToggler">Vowels</button>
+  <button class="diphthongsToggler">Diphthongs</button>
+  <button class="samePronounciationToggler">Same Pronounciation as in English</button>
+  </div>
+
+  <table id="uniqueConsonantsTable">
   <tr>
       <th>
       Letter
@@ -144,9 +150,13 @@
       </td>
   </tr>
   </table>
+
+
+
   <br>
-  Vowels
-  <table border="1">
+
+
+  <table id="vowelsTable" border="1">
     <tr>
       <th>
       Letter
@@ -214,10 +224,95 @@
     b<span class="likeIn">oo</span>t, comp<span class="likeIn">u</span>te
     </td>
   </tr>
-  <tr>
   </table>
 
-  <table border="1">
+  <br>
+
+  <table id="diphthongsTable" border="1">
+  <tr>
+      <th>
+      Diphthong
+      </th>
+      <th>
+      IPA Symbol
+      </th>
+      <th>
+        Like in...
+      </th>
+  </tr>
+  <tr>
+    <td>
+    aj
+    </td>
+    <td>
+    [ai̯]
+    </td>
+    <td>
+  sk<span class="likeIn">y</span>, n<span class="likeIn">igh</span>t
+    </td>
+  </tr>
+  <tr>
+    <td>
+    aŭ
+    </td>
+    <td>
+      [au̯]
+    </td>
+    <td>
+  n<span class="likeIn">ow</span>, c<span class="likeIn">ow</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    ej
+    </td>
+    <td>
+      [ei̯]
+    </td>
+    <td>
+  gr<span class="likeIn">ay</span>, pl<span class="likeIn">ay</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    eŭ
+    </td>
+    <td>
+      [eu]
+    </td>
+    <td>
+    - (rare sound, found in Eŭropo, eŭfemismo)
+    </td>
+  </tr>
+  </tr>
+  <tr>
+    <td>
+    oj
+    </td>
+    <td>
+      [oi̯]
+    </td>
+    <td>
+  b<span class="likeIn">oy</span>, enj<span class="likeIn">oy</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    uj
+    </td>
+    <td>
+      [ui̯]
+    </td>
+    <td>
+  ph<span class="likeIn">ooey</span>, g<span class="likeIn">ooey</span>
+    </td>
+  </tr>
+  </table>
+
+
+
+  <br>
+  <table id="samePronounciationTable" border="1">
   <tr>
     <th>
     Same pronounciation as in English:
@@ -227,6 +322,7 @@
     </td>
   </tr>
   </table>
+
   </div>
   <div id="ending">
     <div><h1>Game Over</h1></div>

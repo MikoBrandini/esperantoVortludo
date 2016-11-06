@@ -135,13 +135,41 @@ makeNewQuestionAppear(questionCounter)
             }
           else if ($target.hasClass('alphabet')) {
           $('#beginning').hide(1000)
-          $('#alphabet').show()
+          $('#pronounciation').show()
           isPaused=true
           //find me
           //setInterval was set here
             }
           else if ($target.hasClass('learnMore')){
             window.open('https://tatoeba.org/eng/sentences/search?from=epo&to=eng&query='+ $('.learnMore').text())
+          }
+          else if ($target.hasClass('uniqueConsonantsToggler')){
+            $('#uniqueConsonantsTable').css('display', 'table')
+            $('#diphthongsTable').hide()
+            $('#samePronounciationTable').hide()
+            $('#vowelsTable').hide()
+            console.log("unique consonants")
+          }
+          else if ($target.hasClass('vowelsToggler')){
+            $('#vowelsTable').css('display', 'table')
+            $('#diphthongsTable').hide()
+            $('#uniqueConsonantsTable').hide()
+            $('#samePronounciationTable').hide()
+            console.log("vowels should appear")
+          }
+          else if ($target.hasClass('diphthongsToggler')){
+            $('#diphthongsTable').css('display', 'table')
+            $('#vowelsTable').hide()
+            $('#uniqueConsonantsTable').hide()
+            $('#samePronounciationTable').hide()
+            console.log("diphthongs should appear")
+          }
+          else if ($target.hasClass('samePronounciationToggler')){
+            $('#samePronounciationTable').css('display', 'table')
+            $('#diphthongsTable').hide()
+            $('#vowelsTable').hide()
+            $('#uniqueConsonantsTable').hide()
+            console.log("samesies should appear")
           }
           else{
               //the esle statement means that a false answer was chosen.
