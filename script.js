@@ -1,36 +1,32 @@
 
-//This counter calls up the question that's appearing.
+//this counter calls up the question that's appearing.
 var questionCounter=0;
-
 //code for Timer:
-timeLeft=45
+timeLeft= 31
 $timerDiv=$('#timer')
-constantVar="komencu"
-var countdown =function(){
+var isPaused=true;
+//paused time when game first loads.
 
-
-
-  if(timeLeft<0){
-     $('.container').hide()
-     $('#userInput').children('ul').remove()
-     $('#ending').show()
-    console.log('time has reached zero')
-  }
-
-  else if (constantVar=="komencu"){
-   setInterval(function(){ timeLeft--;
-    $timerDiv.html(timeLeft)
-      console.log("read me")}, 1000)
-  }
-
-}
-countdown()
 //inspiration for count down
-// http://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward
+//http://stackoverflow.com/questions/21277900/javascript-pausing-setinterval
+var countdown = window.setInterval(
+  function(){
+    if(!isPaused) {
+      timeLeft--;
+      $timerDiv.html(timeLeft);
+      }
 
+        if (timeLeft <= 0){
+         isPaused=true
+         $('.container').hide()
+         $('#userInput').children('ul').remove()
+         $('#ending').show()
+           };
+
+
+      },1000)
 
 //array for questions
-
 //the following is the array for level 1
 var lvl1Questions = [
 {english: "The girl is strong!",
@@ -62,10 +58,10 @@ boolean: false},
 boolean: false},
 {text: "beba",
 boolean: false},
-{text: "rapida",
-boolean: false},
+{text: "knabo",
+boolean: true},
 {text: "kuniklo",
-boolean: true}
+boolean: false}
 ]
 }
 ]
@@ -86,9 +82,7 @@ $('#userInput').append('<ul id=ulAnswers>')
      var correctness=lvl1Questions[i].answers[j].boolean
      $('#ulAnswers').append('<li><button class="' + correctness+'">'+ answer+'</button></li>')
      if($('li').size()==6){
-      return
-     }
-
+      return}
 
     } // end of internal for loop, answers display
     }//end of for loop (iteration through question array)
@@ -101,60 +95,55 @@ makeNewQuestionAppear(questionCounter)
 
 
   var addEventListeners = function(){
-  //thanks to: https://api.jquery.com/hasclass/
-  // http://api.jquery.com/is/
         $('button').click(function(event)
         {
           var $target=$(event.target)
           if ( $target.hasClass('true')){
           $timerDiv.html(timeLeft +=8)
+          $('#progressInner').css('width', '50%')
           console.log('the time left are: ' +  timeLeft)
           //find me
           //clearInterval was here
           $('#userInput').hide()
-          $('.replaceHere').replaceWith(($target))
+          $('.replaceHere').replaceWith(($target).removeClass( "true" ).addClass('learnMore '))
           //"replacement" moves the correct answer's button into the Upper Area
           $('#userInput').children('ul').remove()
+          isPaused=true
+                //internal if....else
+                   if(lvl1Questions.length==(questionCounter+1)){
+                          console.log("this is the end")
+                          $('#victory').show()
 
-
-           if(lvl1Questions.length==(questionCounter+1)){
-                  console.log("this is the end")
-                  $('#victory').show()
-
-                }else{   $('#inbetweenQuestions').show()
-                }
+                        }else{   $('#inbetweenQuestions').show()
+                        }
             }
-
           else if ($target.hasClass('questionToggler')) {
           questionCounter++;
           $('#inbetweenQuestions').hide()
           $('#userInput').show()
           makeNewQuestionAppear(questionCounter)
-          console.log('why')
+          isPaused=false
           //find me
           //setInterval was set here
-
           addEventListeners();
             }
-
           else if ($target.hasClass('beginGame')) {
-          $('#beginning').hide()
-          $('#ending').hide()
+          $('#beginning').hide(1000)
           $('.container').show()
+          isPaused=false
           //find me
           //setInterval was set here
             }
-
-
-
-            else{
-              console.log('false!!!')
+          else if ($target.hasClass('learnMore')){
+            window.open('https://tatoeba.org/eng/sentences/search?from=epo&to=eng&query='+ $('.learnMore').text())
+          }
+          else{
               //the esle statement means that a false answer was chosen.
-              //#ending is
             $('.container').hide()
             $('#userInput').children('ul').remove()
             $('#ending').show()
-
+             isPaused=true
+            console.log("timer is paused")
           }
         }) //end of button listener
 

@@ -13,7 +13,7 @@ background-color: red;
 #progressInner{
 background-color: #009900;
 height:  10px;
-width:  220px;
+width:  0%;
 display:  inline-block  ;
 }
 #timer{
