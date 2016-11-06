@@ -83,7 +83,6 @@ $('#userInput').append('<ul id=ulAnswers>')
      $('#ulAnswers').append('<li><button class="' + correctness+'">'+ answer+'</button></li>')
      if($('li').size()==6){
       return}
-
     } // end of internal for loop, answers display
     }//end of for loop (iteration through question array)
   }//end of makeNewQuestionAppear
@@ -131,6 +130,13 @@ makeNewQuestionAppear(questionCounter)
           $('#beginning').hide(1000)
           $('.container').show()
           isPaused=false
+          //find me
+          //setInterval was set here
+            }
+          else if ($target.hasClass('alphabet')) {
+          $('#beginning').hide(1000)
+          $('#alphabet').show()
+          isPaused=true
           //find me
           //setInterval was set here
             }

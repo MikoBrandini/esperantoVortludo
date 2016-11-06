@@ -28,6 +28,29 @@ background-color: blue;
   background-color: orange;
   display:  none;
 }
+#beginning{
+  background-color: purple;
+  height:  500px;
+  width:  300px;
+  margin:  0 auto;
+  display:  block;
+}
+#ending{
+  background-color: purple;
+  height:  500px;
+  width:  300px;
+  margin:  0 auto;
+  display:  none;
+}
+#alphabet{
+  background-color: purple;
+  width:  300px;
+  margin:  0 auto;
+  display:  none;
+}
+.likeIn{
+  color:  red;
+}
 #upperArea{
   background-color:  yellow;
   height: 50% ;
@@ -64,27 +87,7 @@ button{
   border:  1px solid black;
 }
 
-#esperanto, #english, #beginning, #inbetweenQuestions, #victory{
+#esperanto, #english, #beginning, #inbetweenQuestions, #victory, #alphabet{
   padding-left:  20px;
 }
-#beginning{
-  background-color: purple;
-  height:  500px;
-  width:  300px;
-  margin:  0 auto;
-  display:  block;
-}
-/* #beginningAgain{
-  background-color: purple;
-  height:  500px;
-  width:  300px;
-  margin:  0 auto;
-  display:  none;
-} */
-#ending{
-  background-color: purple;
-  height:  500px;
-  width:  300px;
-  margin:  0 auto;
-  display:  none;
-}
+
