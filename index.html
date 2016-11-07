@@ -15,18 +15,23 @@
 <body>
     <div id="overallWrapper">
         <div id=beginning>
-            <div class="instructions">
-                <h2>Vortludo</h2>
-                <br>
+                <h2 id=vortLudoTitle>Vortludo</h2>
+                <div id="instructions">
                 <p>
-                    Welcome to Vortludo, the word game which teaches you Esperanto, a language created to unite mankind.
-                    <br> The goal of the game is to get every question correct. You must also not let the counter reach zero.
-                    Every you answer correctly, you gain an additional 8 points. You learn additional vocabulary as you play the game. Pay attention!
+                    Learn Esperanto! <br>
+                    A logical, easy, rich language!
+                    <br>
+                    Game Play:
+                    <ul>
+                    <li>Memorize the grammatical rules for each level</li>
+                    <li>Do not let the counter reach zero!</li>
+                    <li>Every correct anwer adds 5 seconds to the timer</li>
+                    </ul>
 
                     <p>
 
             </div>
-            <button class="enterLevel1">Level 1</button>
+            <button id="enterLevel1Button">Level 1</button>
             <button class="pronounciationButton">Pronounciation</button>
         </div>
         <div id="pronounciationWrapper">
@@ -364,7 +369,7 @@
                             <li>verbs in the present tense end in -as</li>
                             <li>verbs in the past tense end in -is</li>
                         </ul>
-                        <button class="beginGame">Begin Game</button>
+                        <button id="beginGameButton">Begin Game</button>
         </div>
 
 
@@ -385,9 +390,9 @@
                 <div id="userInput"></div>
                 <div id="inbetweenQuestions">
 
-                    <div>We are in the upside world now, brotha</div>
+                    <div>Correct answer was chosen.</div>
                     <button class="questionToggler">Will toggle into the next question</button>
-                    <button class="alphabet">alphabet</button>
+                    <button class="pronounciationButton">Pronounciation</button>
                 </div>
 
                 <div id=victory>
