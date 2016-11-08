@@ -16,16 +16,16 @@
     <div id="overallWrapper">
         <div id=beginning>
                 <h2 id=vortLudoTitle>Vortludo</h2>
-                <div id="instructions">
+                <div class="innerDivsWithText">
                 <p>
                     Learn Esperanto! <br>
-                    A logical, easy, rich language!
+                    A logical, rich, and easy language!
                     <br>
-                    Game Play:
+                    <h3>Game Play:</h3>
                     <ul>
                     <li>Memorize the grammatical rules for each level</li>
                     <li>Do not let the counter reach zero!</li>
-                    <li>Every correct anwer adds 5 seconds to the timer</li>
+                    <li>Every correct answer adds 5 seconds to the timer</li>
                     </ul>
 
                     <p>
@@ -35,14 +35,15 @@
             <button class="pronounciationButton">Pronounciation</button>
         </div>
         <div id="pronounciationWrapper">
+                <div class="closePronounciation">X</div>
+
             <div id="pronounciation">
 
                 <div id="tableTogglers">
-                    <div class="close">X</div>
-                    <button class="uniqueConsonantsToggler"> Unique Consonants</button>
-                    <button class="vowelsToggler">Vowels</button>
-                    <button class="diphthongsToggler">Diphthongs</button>
-                    <button class="samePronounciationToggler">Same Pronounciation as in English</button>
+                    <button id="uniqueConsonantsToggler" class="pronounciationButtons"> Unique Consonants</button>
+                    <button id="vowelsToggler" class="pronounciationButtons">Vowels</button>
+                    <button id="diphthongsToggler" class="pronounciationButtons">Diphthongs</button>
+                    <button id="samePronounciationToggler" class="pronounciationButtons">Same Pronounciation</button>
                 </div>
 
                 <div id="uniqueConsonantsTable" class="tableDiv" s>
@@ -351,25 +352,102 @@
             </div>
         </div>
 
+        <div id=lvl1LessonWrapper>
+            <div class="closelvl1Lesson">X</div>
+            <div id="lvl1LessonInternal">
+            <h2>Easy and Logical</h2>
+                                    <table>
+                            <tr>
+                                <th>
+                                    Word Type
+                                </th>
+                                <th>
+                                    Esperanto Suffix
+                                </th>
+                                <th>
+                                Examples
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                Nouns
+                                </td>
+                                <td>
+                                -o
+                                </td>
+                                <td>
+                                tablo, viro, strato
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                Adjectives
+                                </td>
+                                <td>
+                                -a
+                                </td>
+                                <td>
+                                ruĝa, afabla, facila
+                                </td>
+                            </tr>
+                          <tr>
+                                <td>
+                                Present Tense Verbs
+                                </td>
+                                <td>
+                                -as
+                                </td>
+                                <td>
+                                manĝas, vidas, karesas
+                                </td>
+                            </tr>
+                          <tr>
+                                <td>
+                                Past Tense Verbs
+                                </td>
+                                <td>
+                                -is
+                                </td>
+                                <td>
+                                fumis, dancis, vivis
+                                </td>
+                            </tr>
+                          <tr>
+                                <td>
+                                Future Tense Verbs
+                                </td>
+                                <td>
+                                -os
+                                </td>
+                                <td>
+                                loĝos, parolos, komprenos
+                                </td>
+                            </tr>
+                        </table>
+            </div>
+            </div>
 
 
         <div id="ending">
             <div>
                 <h1>Game Over</h1>
             </div>
-            <h4>goodbye and thanks for all the fish </h4>
+            <button id=tryAgain>Try again?</button>
+
         </div>
 
         <div id="lvl1">
-        <h2>Remember:</h2>
 
-                      <ul class="lvl1Bullets">
-                            <li>nouns end in -o</li>
-                            <li>adjectives end in a</li>
-                            <li>verbs in the present tense end in -as</li>
-                            <li>verbs in the past tense end in -is</li>
-                        </ul>
+        <h2>Level 1 Lesson:</h2>
+        <div class="innerDivsWithText">
+
+                        <button class="lvl1LessonButton" id="lvl1LessonFirstButton">Level 1 Lesson</button>
+
                         <button id="beginGameButton">Begin Game</button>
+
+                         <button class="pronounciationButton">Pronounciation</button>
+
+        </div>
         </div>
 
 
@@ -390,14 +468,23 @@
                 <div id="userInput"></div>
                 <div id="inbetweenQuestions">
 
-                    <div>Correct answer was chosen.</div>
-                    <button class="questionToggler">Will toggle into the next question</button>
+                    <div><h3>Correct answer was chosen.</h3></div>
+                    <button class="questionToggler">Next Question</button>
                     <button class="pronounciationButton">Pronounciation</button>
+                    <button class="lvl1LessonButton">Level 1 Lesson</button>
+
+
                 </div>
 
                 <div id=victory>
-                    <div>You won, lad.</div>
-                </div>
+            <h3>You can practice more at:</h3>
+            <br>
+
+            <a href="http://learn.esperanto.com/en/">Esperanto in 12 Days</a>
+            <br>
+            <a href="https://www.youtube.com/watch?v=mWbyXVSiCxw">Mazi en Gondolando</a>
+            <br>
+            <a href="http://www.kurso.com.br/index.php?en">Downlaod Kurso de Esperanto</a>                </div>
 
             </div>
         </div>

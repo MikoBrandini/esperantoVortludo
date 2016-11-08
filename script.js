@@ -5,7 +5,7 @@ var whatToDoWithAnswers = function() {
     $('.booleanChecker').click(function() {
             var $target = $(event.target)
             if ($target.hasClass('true')) {
-                $timerDiv.html(timeLeft += 8)
+                $timerDiv.html(timeLeft += 5)
                 $('#progressInner').css('width', (questionCounter+1)*10+'%')
                 console.log('the time left are: ' + timeLeft)
                 $('#userInput').hide()
@@ -32,7 +32,7 @@ var whatToDoWithAnswers = function() {
                 window.open('https://tatoeba.org/eng/sentences/search?from=epo&to=eng&query=' + $('.learnMore').text())
             }
             // checking whether the game is over:
-            if (lvl1Questions.length == (questionCounter + 1)) {
+            if (lvl1Questions.length == (questionCounter)) {
                 console.log("this is the end")
                 $('#victory').show()
 
@@ -74,8 +74,10 @@ var countdown = window.setInterval(
 
 
     }, 1000)
-
-
+//if game lost:
+$('#tryAgain').click(function() {
+window.location.reload()
+})
 
 
 //this counter calls up the question that's appearing.
@@ -86,9 +88,9 @@ var lvl1Questions = [
 
     {
         english: "The boy was with me.",
-        question: "La knabo" + '<span class="replaceHere"><button>blank</button></span>' + "kun vi.",
+        question: "La knabo" + '<span class="replaceHere"><button class="blankButton">blank</button></span>' + "kun vi.",
         answers: [{
-            text: "ĵurnalismo",
+            text: "ĵurnalo",
             boolean: false
         }, {
             text: "estas",
@@ -100,7 +102,7 @@ var lvl1Questions = [
             text: "estis",
             boolean: true
         }, {
-            text: "dika",
+            text: "avino",
             boolean: false
         }, {
             text: "nepo",
@@ -111,7 +113,7 @@ var lvl1Questions = [
 
     {
         english: "The boy is fast!",
-        question: "La" + '<span class="replaceHere"><button>blank</button></span>' + "estas rapida!",
+        question: "La" + '<span class="replaceHere"><button class="blankButton">blank</button></span>' + "estas rapida!",
         answers: [{
             text: "ĵaluza",
             boolean: false
@@ -135,8 +137,8 @@ var lvl1Questions = [
 
 
     {
-        english: "Tomorrow will be beautiful!",
-        question: "Morgaŭ" + '<span class="replaceHere"><button>blank</button></span>' + " bela!",
+        english: "Tomorrow will be a sunny day!",
+        question: "Morgaŭ" + '<span class="replaceHere"><button class="blankButton">blank</button></span>' + " suna tago!",
         answers: [{
             text: "estas",
             boolean: false
@@ -160,7 +162,7 @@ var lvl1Questions = [
 
     {
         english: "I will be there tomorrow!",
-        question: "Mi estos tie" + '<span class="replaceHere"><button>blank</button></span>',
+        question: "Mi estos tie" + '<span class="replaceHere"><button class="blankButton">blank</button></span>',
         answers: [{
             text: "akvo",
             boolean: false
@@ -183,8 +185,8 @@ var lvl1Questions = [
     },
 
     {
-        english: "The girl is with the cat",
-        question: "La knabino estas kun la " + '<span class="replaceHere"><button>blank</button></span>',
+        english: "The girl is playing with the cat",
+        question: "La knabino ludas kun la " + '<span class="replaceHere"><button class="blankButton">blank</button></span>',
         answers: [{
             text: "hundo",
             boolean: false
@@ -206,7 +208,7 @@ var lvl1Questions = [
         }]
     }, {
         english: "The woman is tall",
-        question: "La virino estas" + '<span class="replaceHere"><button>blank</button></span>',
+        question: "La virino estas" + '<span class="replaceHere"><button class="blankButton">blank</button></span>',
         answers: [{
             text: "bela",
             boolean: false
@@ -228,7 +230,7 @@ var lvl1Questions = [
         }]
     }, {
         english: "The man fell",
-        question: "La viro" + '<span class="replaceHere"><button>blank</button></span>',
+        question: "La viro" + '<span class="replaceHere"><button class="blankButton">blank</button></span>',
         answers: [{
             text: "estos",
             boolean: false
@@ -242,17 +244,17 @@ var lvl1Questions = [
             text: "falis",
             boolean: true
         }, {
-            text: "komprenas",
+            text: "falas",
             boolean: false
         }, {
-            text: "komprenos",
+            text: "falos",
             boolean: false
         }]
     },
 
     {
         english: "The young boy is playing with the cat.",
-        question: "La juna knabo" + '<span class="replaceHere"><button>blank</button></span> kun la kato',
+        question: "La juna knabo" + '<span class="replaceHere"><button class="blankButton">blank</button></span> kun la kato',
         answers: [{
             text: "konis",
             boolean: false
@@ -272,9 +274,10 @@ var lvl1Questions = [
             text: "kuniklo",
             boolean: false
         }]
-    }, {
+    },
+    {
         english: "I did not sleep yesterday",
-        question: "Mi ne" + '<span class="replaceHere"><button>blank</button></span> hieraŭ',
+        question: "Mi ne" + '<span class="replaceHere"><button class="blankButton">blank</button></span> hieraŭ',
         answers: [{
             text: "dancos",
             boolean: false
@@ -282,7 +285,7 @@ var lvl1Questions = [
             text: "estas",
             boolean: false
         }, {
-            text: "komprenas",
+            text: "ĉiel",
             boolean: false
         }, {
             text: "hundo",
@@ -294,6 +297,29 @@ var lvl1Questions = [
             text: "preĝas",
             boolean: false
         }]
+    },
+    {
+        english: "The coffee is tasty!",
+        question: "La" + '<span class="replaceHere"><button class="blankButton">blank</button></span> estas bongusta!',
+        answers: [{
+            text: "teo",
+            boolean: false
+        }, {
+            text: "biero",
+            boolean: false
+        }, {
+            text: "tablo",
+            boolean: false
+        }, {
+            text: "kafo",
+            boolean: true
+        }, {
+            text: "viro",
+            boolean: false
+        }, {
+            text: "fenestro",
+            boolean: false
+        }]
     }
 ]
 
@@ -302,9 +328,9 @@ var makeNewQuestionAppear = function(questionNum) {
 
         i = questionNum
         var english = lvl1Questions[i].english
-        $('#english').html(english)
+        $('#english').html('<div class="sentences">'+english)
         var esperanto = lvl1Questions[i].question
-        $('#esperanto').html(esperanto)
+        $('#esperanto').html('<div class="sentences">'+esperanto)
         $('#userInput').append('<ul id=ulAnswers>')
         for (j = 0; j < lvl1Questions[i].answers.length; j++) {
             //the following are the contents of the internal for loop
@@ -341,6 +367,8 @@ $('#beginGameButton').on("click", function() {
 
 
 
+
+
 $('.questionToggler').click(function() {
     console.log("testing toggler question repetition")
     makeNewQuestionAppear(questionCounter)
@@ -350,15 +378,41 @@ $('.questionToggler').click(function() {
 })
 
 
+
+//how to read the level 1 lesson
+
+
+
 //the remaining functions deal with pronounciation related events
 $('.pronounciationButton').click(function() {
     console.log("clicking on the pronounciation button")
     $('#pronounciationWrapper').show()
     isPaused = true
 })
+$('.lvl1LessonButton').click(function(){
+console.log("clicking on the lvl1 lesson button")
+$('#lvl1LessonWrapper').show()
+isPaused=true
+})
+
+$('.closelvl1Lesson').click(function() {
+    var $target = $(event.target)
+    if ($target.hasClass('closelvl1Lesson')) {
+        $('#lvl1LessonWrapper').css('display', 'none')
+        console.log("hide this lesson 1 wrapper")
+    }
+})
+
+$('.closePronounciation').click(function() {
+    var $target = $(event.target)
+    if ($target.hasClass('closePronounciation')) {
+        $('#pronounciationWrapper').css('display', 'none')
+        console.log("hide this pronounciation wrapper")
+    }
+})
 
 
-$('.uniqueConsonantsToggler').click(function() {
+$('#uniqueConsonantsToggler').click(function() {
     $('#uniqueConsonantsTable').show()
     $('#diphthongsTable').hide()
     $('#samePronounciationTable').hide()
@@ -366,7 +420,7 @@ $('.uniqueConsonantsToggler').click(function() {
     console.log("unique consonants")
 })
 
-$('.vowelsToggler').click(function() {
+$('#vowelsToggler').click(function() {
     $('#vowelsTable').css('display', 'table')
     $('#diphthongsTable').hide()
     $('#uniqueConsonantsTable').hide()
@@ -375,7 +429,7 @@ $('.vowelsToggler').click(function() {
 })
 
 
-$('.diphthongsToggler').click(function() {
+$('#diphthongsToggler').click(function() {
     $('#diphthongsTable').css('display', 'table')
     $('#vowelsTable').hide()
     $('#uniqueConsonantsTable').hide()
@@ -383,17 +437,11 @@ $('.diphthongsToggler').click(function() {
     console.log("diphthongs should appear")
 })
 
-$('.samePronounciationToggler').click(function() {
+$('#samePronounciationToggler').click(function() {
     $('#samePronounciationTable').css('display', 'table')
     $('#diphthongsTable').hide()
     $('#vowelsTable').hide()
     $('#uniqueConsonantsTable').hide()
 })
 
-$('.close').click(function() {
-    var $target = $(event.target)
-    if ($target.hasClass('close')) {
-        $('#pronounciationWrapper').css('display', 'none')
-        console.log("hide this")
-    }
-})
+
