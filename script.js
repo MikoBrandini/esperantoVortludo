@@ -6,7 +6,9 @@ var whatToDoWithAnswers = function() {
             var $target = $(event.target)
             if ($target.hasClass('true')) {
                 $timerDiv.html(timeLeft += 5)
-                $('#progressInner').css('width', (questionCounter+1)*10+'%')
+                $('#progressInner').animate({width: (questionCounter+1)*10+'%'}, 'slow')
+                $success=$('audio')[0];
+                $success.play()
                 console.log('the time left are: ' + timeLeft)
                 $('#userInput').hide()
                     //"replacement" moves the correct answer's button into the Upper Area
@@ -23,6 +25,8 @@ var whatToDoWithAnswers = function() {
                 $('.gameContainer').hide()
                 $('#userInput').children('ul').remove()
                 $('#ending').show()
+                $wrong=$('audio')[1];
+                $wrong.play()
                 isPaused = true
                 console.log("timer is paused")
             }
@@ -51,7 +55,7 @@ var whatToDoWithAnswers = function() {
 
 
 //code for Timer:
-timeLeft = 30
+timeLeft = 31
 $timerDiv = $('#timer')
     //paused time when game first loads.
 var isPaused = true;
@@ -70,6 +74,8 @@ var countdown = window.setInterval(
             $('.gameContainer').hide()
             $('#userInput').children('ul').remove()
             $('#ending').show()
+                $wrong=$('audio')[1];
+                $wrong.play(1000)
         };
 
 
