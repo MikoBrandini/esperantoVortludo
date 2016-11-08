@@ -2,10 +2,10 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    color:  #009900;
+    color: #009900;
 }
-html{
-background: linear-gradient(to right, white, #c3f8c3)
+html {
+    background: linear-gradient(to right, #E2FFE2, #c3f8c3)
 }
 #progressOuter {
     background-color: #E9E9E9;
@@ -13,7 +13,8 @@ background: linear-gradient(to right, white, #c3f8c3)
     width: 258px;
     border: 1px solid #00E500;
     display: inline-block;
-    text-align: left;/*for progress bar to start from the left*/
+    text-align: left;
+    /*for progress bar to start from the left*/
 }
 #progressInner {
     background-color: #009900;
@@ -24,8 +25,8 @@ background: linear-gradient(to right, white, #c3f8c3)
 #timer {
     display: inline-block;
     padding-left: 5px;
-    color:  #4C0026;
-    font-size:  24px;
+    color: #4C0026;
+    font-size: 24px;
 }
 .gameContainer {
     height: 500px;
@@ -33,80 +34,93 @@ background: linear-gradient(to right, white, #c3f8c3)
     margin: 0 auto;
     display: none;
 }
-
-#beginning, #ending #lvl1 {
+#beginning,
+#ending #lvl1 {
     height: 500px;
     width: 300px;
     margin: 0 auto;
     display: block;
 }
-#ending, #lvl1{
+#gamePlay {
+    margin: 30px 10px 30px 10px;
+}
+#ending,
+#lvl1 {
     display: none;
 }
-.innerDivsWithText{
-  margin:  5px 10px;
+#gameOverHeader {
+    margin-bottom: 100px;
 }
-
-h2{
-  font-size:  40px;
-  text-align:  center;
+.innerDivsWithText {
+    margin: 5px 10px;
 }
-p, li{
-  font-size:  20px;
-  text-align: justify;
+h2 {
+    font-size: 40px;
+    text-align: center;
 }
-
-button{
-  margin:  5% auto;
-  background-color: white;
-box-shadow: 2px 2px #009900
-
+p,
+li {
+    font-size: 20px;
+    text-align: justify;
+}
+button {
+    margin: 5% auto;
+    background-color: white;
+    box-shadow: 1px 1px #009900
+}
+button:hover,
+button:focus,
+button:active,
+button:focus:active {
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 2px 2px #009900;
+    outline: none;
 }
 #enterLevel1Button,
 #beginGameButton,
 #lvl1LessonFirstButton,
-#tryAgain{
-font-size:  50px;
-display:  block;
-margin:  0 auto;
+#tryAgain {
+    font-size: 50px;
+    display: block;
+    margin: 0 auto;
+    xwx` border: 1px solid #004C00;
 }
 #lvl1LessonFirstButton {
-  margin-bottom:  150px;
+    margin-bottom: 150px;
 }
-
-#pronounciationWrapper, #lvl1LessonWrapper{
+#pronounciationWrapper,
+#lvl1LessonWrapper {
     display: none;
     z-index: 1;
     top: 0;
-    height:  500px;
-    width:  100%;
+    height: 500px;
+    width: 100%;
     position: fixed;
     margin: 0 auto;
 }
-
-#pronounciation,#lvl1LessonInternal {
+#pronounciation,
+#lvl1LessonInternal {
     background-color: white;
     margin: 10% auto;
     border: 1px solid #004C00;
     top: 0;
     z-index: 2;
     opacity: 1;
-    height:  500px;
+    height: 500px;
 }
 td,
 th,
 table {
     border: 1px solid #004C00;
-    margin:  0 auto;
-
+    margin: 0 auto;
 }
 .tableDiv {
     display: none;
-        margin:  0 auto;
-
+    margin: 0 auto;
 }
 .closePronounciation,
-.closelvl1Lesson{
+.closelvl1Lesson {
     color: white;
     background-color: #4C0026;
     text-align: center;
@@ -129,6 +143,7 @@ table {
 #inbetweenQuestions {
     height: 50%;
     display: none;
+    padding-top: 20px;
 }
 #victory {
     height: 50%;
@@ -149,53 +164,53 @@ table {
 .pronounciationButtons,
 .lvl1LessonButton,
 .pronounciationButton,
-.questionToggler
-{
+.questionToggler {
     margin: 5%;
     display: inline-block;
     border: 1px solid #004C00;
-    font-size:  28px;
-    padding:  5px;
+    font-size: 28px;
+    padding: 5px;
 }
-.blankButton,{
-  margin:  2%;
+.blankButton,
+{
+    margin: 2%;
 }
-
 .questionToggler,
 {
-    font-size:  15px;
+    font-size: 15px;
 }
 .pronounciationButton,
-.lvl1LessonButton{
-    font-size:  12px;
+.lvl1LessonButton {
+    font-size: 12px;
 }
-
-.pronounciationButtons{
-height:  15%;
-font-size:  15px;
-margin:  2%;
+.pronounciationButtons {
+    height: 15%;
+    font-size: 15px;
+    margin: 2%;
 }
 #esperanto,
 #english,
 #inbetweenQuestions,
 #victory,
-#pronounciation
-#lvl1{
+#pronounciation #lvl1 {
     padding-left: 10px;
-    margin:  0 auto;
+    margin: 0 auto;
 }
-#pronounciation{
-  margin-top:  50px;
+#pronounciation {
+    margin-top: 50px;
 }
-ul{
-  list-style-position: inside;
+ul {
+    list-style-position: inside;
 }
-a{
-  text-align:  center;
+a {
+    text-align: center;
+    margin-bottom: 10px;
 }
-td, th{
-  font-size:  20px;
+td,
+th {
+    font-size: 20px;
 }
-.sentences{
-font-size: 24px;}
-
+.sentences {
+    padding-top: 50px;
+    font-size: 24px;
+}

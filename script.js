@@ -6,9 +6,9 @@ var whatToDoWithAnswers = function() {
             var $target = $(event.target)
             if ($target.hasClass('true')) {
                 $timerDiv.html(timeLeft += 5)
-                $('#progressInner').animate({width: (questionCounter+1)*10+'%'}, 'slow')
                 $success=$('audio')[0];
                 $success.play()
+                $('#progressInner').animate({width: (questionCounter+1)*10+'%'}, 'slow')
                 console.log('the time left are: ' + timeLeft)
                 $('#userInput').hide()
                     //"replacement" moves the correct answer's button into the Upper Area
@@ -39,6 +39,8 @@ var whatToDoWithAnswers = function() {
             if (lvl1Questions.length == (questionCounter)) {
                 console.log("this is the end")
                 $('#victory').show()
+              $victorySound=$('audio')[2];
+                $victorySound.play()
 
             } else {
                 $('#inbetweenQuestions').show()
@@ -55,7 +57,7 @@ var whatToDoWithAnswers = function() {
 
 
 //code for Timer:
-timeLeft = 31
+timeLeft = 26
 $timerDiv = $('#timer')
     //paused time when game first loads.
 var isPaused = true;
@@ -222,10 +224,10 @@ var lvl1Questions = [
             text: "rapida",
             boolean: false
         }, {
-            text: "viro",
+            text: "virina",
             boolean: false
         }, {
-            text: "kato",
+            text: "sendependa",
             boolean: false
         }, {
             text: "alta",
@@ -305,10 +307,10 @@ var lvl1Questions = [
         }]
     },
     {
-        english: "The coffee is tasty!",
-        question: "La" + '<span class="replaceHere"><button class="blankButton">blank</button></span> estas bongusta!',
+        english: "The warm coffee is tasty!",
+        question: "La varma" + '<span class="replaceHere"><button class="blankButton">blank</button></span> estas bongusta!',
         answers: [{
-            text: "teo",
+            text: "sandviĉo",
             boolean: false
         }, {
             text: "biero",
@@ -320,7 +322,7 @@ var lvl1Questions = [
             text: "kafo",
             boolean: true
         }, {
-            text: "viro",
+            text: "junulo",
             boolean: false
         }, {
             text: "fenestro",
@@ -385,11 +387,9 @@ $('.questionToggler').click(function() {
 
 
 
-//how to read the level 1 lesson
 
 
 
-//the remaining functions deal with pronounciation related events
 $('.pronounciationButton').click(function() {
     console.log("clicking on the pronounciation button")
     $('#pronounciationWrapper').show()
