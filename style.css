@@ -214,3 +214,11 @@ th {
     padding-top: 50px;
     font-size: 24px;
 }
+
+#gamePlay > ol{
+    list-style-type:  none;
+    display:  table-cell;
+}
+#gamePlay > ol >li{
+    text-align:  center;
+}
