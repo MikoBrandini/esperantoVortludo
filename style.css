@@ -79,14 +79,14 @@ button:focus:active {
 }
 #enterLevel1Button,
 #beginGameButton,
-#lvl1LessonFirstButton,
-#tryAgain {
-    font-size: 50px;
+#tryAgain{
+    font-size: 30px;
     display: block;
     margin: 0 auto;
-    xwx` border: 1px solid #004C00;
+ border: 1px solid #004C00;
 }
 #lvl1LessonFirstButton {
+    font-size: 50px;
     margin-bottom: 150px;
 }
 #pronounciationWrapper,
