@@ -92,11 +92,10 @@ button:focus:active {
     display: none;
     z-index: 1;
     top: 0;
-    height: 500px;
     width: 100%;
     position: fixed;
     margin: 0 auto;
-    overflow: auto;
+    height: 500px;
 }
 #pronounciation,
 #lvl1LessonInternal {
@@ -107,6 +106,7 @@ button:focus:active {
     z-index: 2;
     opacity: 1;
     height: 500px;
+    overflow: auto;
 }
 td,
 th,
@@ -128,7 +128,6 @@ table {
     font-weight: bold;
     border: 1px solid #004C00;
 }
-/*hover doesn't work on mobile*/
 
 .likeIn {
     color: #4C0026;
