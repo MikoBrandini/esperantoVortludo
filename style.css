@@ -96,6 +96,7 @@ button:focus:active {
     width: 100%;
     position: fixed;
     margin: 0 auto;
+    overflow: auto;
 }
 #pronounciation,
 #lvl1LessonInternal {
