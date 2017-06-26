@@ -57,7 +57,7 @@ var whatToDoWithAnswers = function() {
 
 
 //code for Timer:
-timeLeft = 26
+timeLeft = 61
 $timerDiv = $('#timer')
     //paused time when game first loads.
 var isPaused = true;
@@ -93,6 +93,29 @@ var questionCounter = 0;
 //array for questions
 //the following is the array for level 1
 var lvl1Questions = [
+    {
+        english: "The day was good!",
+        question: "La tago estis" + '<span class="replaceHere"><button class="blankButton">blank</button></span>',
+        answers: [{
+            text: "akvo",
+            boolean: false
+        }, {
+            text: "hieraŭ",
+            boolean: false
+        }, {
+            text: "bona",
+            boolean: true
+        }, {
+            text: "vino",
+            boolean: false
+        }, {
+            text: "ĉevala",
+            boolean: false
+        }, {
+            text: "urbo",
+            boolean: false
+        }]
+    },
 
     {
         english: "The boy was with me.",
@@ -126,7 +149,7 @@ var lvl1Questions = [
             text: "ĵaluza",
             boolean: false
         }, {
-            text: "rapido",
+            text: "profesoro",
             boolean: false
         }, {
             text: "bela",
@@ -138,11 +161,10 @@ var lvl1Questions = [
             text: "knabo",
             boolean: true
         }, {
-            text: "kuniklo",
+            text: "hundo",
             boolean: false
         }]
     },
-
 
     {
         english: "Tomorrow will be a sunny day!",
@@ -165,30 +187,6 @@ var lvl1Questions = [
         }, {
             text: "estos",
             boolean: true
-        }]
-    },
-
-    {
-        english: "I will be there tomorrow!",
-        question: "Mi estos tie" + '<span class="replaceHere"><button class="blankButton">blank</button></span>',
-        answers: [{
-            text: "akvo",
-            boolean: false
-        }, {
-            text: "morgaŭ",
-            boolean: true
-        }, {
-            text: "hundo",
-            boolean: false
-        }, {
-            text: "vino",
-            boolean: false
-        }, {
-            text: "ĉevala",
-            boolean: false
-        }, {
-            text: "bela",
-            boolean: false
         }]
     },
 
@@ -227,14 +225,14 @@ var lvl1Questions = [
             text: "virina",
             boolean: false
         }, {
-            text: "sendependa",
+            text: "sata",
+            boolean: false
+        }, {
+            text: "knabino",
             boolean: false
         }, {
             text: "alta",
             boolean: true
-        }, {
-            text: "knabino",
-            boolean: false
         }]
     }, {
         english: "The man fell",
